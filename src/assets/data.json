@@ -1,0 +1,32 @@
+{
+    "activities": [{
+            "summary": "Water the plants",
+            "tags": ["home improvement"],
+            "rewards": [{ "hi": 1 }],
+            "duration": 10
+        },
+        {
+            "summary": "Read a page of a german book",
+            "tags": ["self improvement"],
+            "rewards": [{ "si": 1 }],
+            "duration": 5
+        },
+        {
+            "summary": "Read a chapter of any book",
+            "tags": ["just for me"],
+            "rewards": [{ "fun": 1 }],
+            "duration": 15
+        },
+        {
+            "summary": "Pick up the clothes from the bedroom floor",
+            "tags": ["home improvement"],
+            "rewards": [{ "hi": 1 }],
+            "duration": 5
+        }
+    ],
+    "rewards": {
+        "hi": 0,
+        "si": 0,
+        "fun": 0
+    }
+}
