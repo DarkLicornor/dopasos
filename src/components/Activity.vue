@@ -1,12 +1,12 @@
 <template>
   <div v-if="dopactivity.summary" class="activity">
-    <p> activity component </p>
+    <a v-on:click="goBackToSos"> go back pls </a>
     <div>
       <h1> {{dopactivity.summary}} </h1>
     </div>
     <div class="activity-actions">
       <div class="activity-tile" id="activity-reward-info">
-        <p>TODO iterate over all rewards</p>
+        <p>TODO iterate over all rewards</p>ßü´
       </div>
       <div class="activity-tile" id="activity-done-button">
         <p> Did it ! </p>
@@ -24,6 +24,11 @@ export default {
   props: {
     msg: String,
     dopactivity: Object
+  },
+  methods: {
+    goBackToSos: function () {
+      this.$emit('updateDopactivity', {})
+    }
   }
 }
 </script>

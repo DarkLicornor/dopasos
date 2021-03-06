@@ -39,7 +39,7 @@ export default {
         ? this.activities.filter(({ tags }) => tags.includes(tag))
         : this.activities
       const activity = activityList[Math.floor(Math.random() * activityList.length)]
-      this.$emit('dopactivity', activity)
+      this.$emit('updateDopactivity', activity)
     }
   }
 }

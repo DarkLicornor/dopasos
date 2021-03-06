@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <SOS v-if="Object.keys(dopactivity).length === 0" v-on:dopactivity="updateDopactivity"/>
-    <Activity v-if="Object.keys(dopactivity).length !== 0" :dopactivity="dopactivity" />
+    <SOS v-if="Object.keys(dopactivity).length === 0" v-on:updateDopactivity="updateDopactivity"/>
+    <Activity v-if="Object.keys(dopactivity).length !== 0" :dopactivity="dopactivity" v-on:updateDopactivity="updateDopactivity"/>
   </div>
 </template>
 
