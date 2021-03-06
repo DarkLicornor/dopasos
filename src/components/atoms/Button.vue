@@ -21,7 +21,7 @@ export default {
 <style scoped lang="scss">
 .button {
     background: #FDF7FF;
-    box-shadow: 0px 0px 10px 4px rgba(76, 11, 183, 0.2);
+    box-shadow: 0px 0px 10px 10px rgba(76, 11, 183, 0.2);
     border-radius: 50%;
     width: 300px;
     height: 300px;
@@ -30,6 +30,14 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s linear;
+
+}
+
+.button:hover{
+    box-shadow: inset 0px 0px 5px 1px rgba(76, 11, 183, 0.2);
+    transform: scale(1.05)
 }
 
 img {
