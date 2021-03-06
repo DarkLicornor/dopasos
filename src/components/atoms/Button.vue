@@ -1,5 +1,5 @@
 <template>
-  <div class="button">
+  <div class="button" v-on:click="$emit('clicked', tag)">
       <img v-if='icon' :src="require(`@/assets/icons/${icon}`)" />
       <p class="smallText" v-if='smallText'> {{smallText}} </p>
       <p class="bigText" v-if='bigText'> {{bigText}} </p>
@@ -12,7 +12,8 @@ export default {
   props: {
     smallText: String,
     bigText: String,
-    icon: String
+    icon: String,
+    tag: String
   }
 }
 </script>

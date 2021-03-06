@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <SOS v-on:dopactivity="updateDopactivity" msg="Welcome to Your Vue.js App"/>
-    <Activity v-if="Object.keys(dopactivity).length !== 0"  :dopactivity="dopactivity" />
+    <SOS v-if="Object.keys(dopactivity).length === 0" v-on:dopactivity="updateDopactivity"/>
+    <Activity v-if="Object.keys(dopactivity).length !== 0" :dopactivity="dopactivity" />
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   },
   methods: {
     updateDopactivity: function (newActivity) {
+      console.log('updated!')
       this.dopactivity = newActivity
     }
   }

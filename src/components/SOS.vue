@@ -1,11 +1,11 @@
 <template>
   <div class="sos">
     <h1>DopaSOS</h1>
-    <Button class="bigButton" v-on:click="getActivity()" smallText="Give me anything to do." bigText="Anything, really"/>
+    <Button  class="bigButton" v-on:clicked="getActivity($event)" smallText="Give me anything to do." bigText="Anything, really"/>
     <div class="sos-choices">
-      <Button class="smallButton" v-on:click="getActivity('home improvement')" icon="home.svg" />
-      <Button class="smallButton" v-on:click="getActivity('self improvement')" icon="heart.svg" />
-      <Button class="smallButton" v-on:click="getActivity('chore')" icon="chore.svg" />
+      <Button class="smallButton" v-on:clicked="getActivity($event)" tag="home improvement" icon="home.svg" />
+      <Button class="smallButton"  v-on:clicked="getActivity($event)" tag="self improvement" icon="heart.svg" />
+      <Button class="smallButton" v-on:clicked="getActivity($event)" tag="chore" icon="chore.svg" />
     </div>
     <div v-if="dopactivity.summary">
       <h1> {{dopactivity.summary}} </h1>
@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     getActivity: function (tag) {
+      console.log('hola', tag)
       const activityList = tag
         ? this.activities.filter(({ tags }) => tags.includes(tag))
         : this.activities
