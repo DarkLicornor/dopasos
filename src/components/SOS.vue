@@ -1,12 +1,13 @@
 <template>
   <div class="sos">
     <p> sos component </p>
-    <div>
-      <h1>I need help now. Give me something to do!</h1>
+    <div class="sos-layout">
+      <h1>DopaSOS</h1>
+      <Button class="bigButton" v-on:click="getActivity()" smallText="Give me anything to do." bigText="Anything, really"/>
       <div class="sos-choices">
-        <div class="sos-choice" v-on:click="getActivity('home improvement')"> Give me Home improvement stuff</div>
-        <div class="sos-choice" v-on:click="getActivity('self improvement')"> Give me Self improvement stuff</div>
-        <div class="sos-choice" v-on:click="getActivity()"> Give me ANYTHING</div>
+        <Button class="smallButton" v-on:click="getActivity('home improvement')" icon="home.svg" />
+        <Button class="smallButton" v-on:click="getActivity('self improvement')" icon="heart.svg" />
+        <Button class="smallButton" v-on:click="getActivity('chore')" icon="chore.svg" />
       </div>
       <div v-if="dopactivity.summary">
         <h1> {{dopactivity.summary}} </h1>
@@ -17,6 +18,8 @@
 
 <script>
 import json from '@/assets/data.json'
+import Button from './atoms/Button'
+
 export default {
   data () {
     return {
@@ -26,6 +29,9 @@ export default {
     }
   },
   name: 'SOS',
+  components: {
+    Button
+  },
   props: {
     msg: String
   },
@@ -61,6 +67,13 @@ a {
 .sos {
   background: darkorange;
 }
+
+.sos-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .sos-choices {
   display:flex;
   flex-direction: row;
@@ -72,5 +85,17 @@ a {
     cursor:pointer;
     color: #42b983;
   }
+}
+
+.bigButton {
+  width: 300px;
+  height: 300px;
+  color: #4C0BB7;
+}
+
+.smallButton {
+  width: 150px;
+  height: 150px;
+  color: #4C0BB7;
 }
 </style>
